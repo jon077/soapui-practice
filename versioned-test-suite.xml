@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="593cabe1-5fd2-421d-a8f5-69c21755f3b2" activeEnvironment="Default" name="SampleTest" soapui-version="5.0.0" resourceRoot="${projectDir}" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="Count Empty Values">true</con:setting><con:setting id="Count ? Values">true</con:setting><con:setting id="Excluded elements">&lt;xml-fragment/></con:setting><con:setting id="Multi values">&lt;xml-fragment/></con:setting><con:setting id="com.eviware.soapui.impl.wsdl.actions.iface.tools.soapui.TestRunnerAction@values-local"><![CDATA[<xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  <con:entry key="Environment" value="Default"/>
+  <con:entry key="Global Properties" value=""/>
+  <con:entry key="TestSuite" value="deviceedge"/>
+  <con:entry key="Password" value=""/>
+  <con:entry key="TestRunner Path" value=""/>
+  <con:entry key="Tool Args" value=""/>
+  <con:entry key="Ignore Errors" value="false"/>
+  <con:entry key="Host:Port" value=""/>
+  <con:entry key="user-settings.xml Password" value=""/>
+  <con:entry key="WSS Password Type" value=""/>
+  <con:entry key="Save Project" value="false"/>
+  <con:entry key="Enable UI" value="false"/>
+  <con:entry key="System Properties" value=""/>
+  <con:entry key="Domain" value=""/>
+  <con:entry key="Coverage Report" value="false"/>
+  <con:entry key="Export JUnit Results" value="false"/>
+  <con:entry key="Open Report" value="false"/>
+  <con:entry key="Project Properties" value=""/>
+  <con:entry key="Export All" value="false"/>
+  <con:entry key="Project Password" value=""/>
+  <con:entry key="Report Format(s)" value=""/>
+  <con:entry key="TestCase" value="&lt;all>"/>
+  <con:entry key="Print Report" value="false"/>
+  <con:entry key="Username" value=""/>
+  <con:entry key="Root Folder" value=""/>
+  <con:entry key="Save After" value="false"/>
+  <con:entry key="Add Settings" value="false"/>
+  <con:entry key="Endpoint" value=""/>
+  <con:entry key="Select Report Type" value=""/>
+</xml-fragment>]]></con:setting></con:settings><con:testSuite name="TestSuite"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase1" searchProperties="true" id="e1bc6154-486b-4398-a4a8-338c8dc9daa5"><con:settings/><con:testStep type="groovy" name="Groovy Script"><con:settings/><con:config><script>log.info(testRunner.testCase.getPropertyValue("version"));
+
+if(Float.parseFloat(testRunner.testCase.getPropertyValue("version")) != 1.0){
+	testRunner.testCase.testSteps.each{k,v -> 
+	   log.info("Cancelling step: " + k);
+        testRunner.cancel(k);
+	}
+}
+</script></con:config></con:testStep><con:testStep type="groovy" name="Fake Run Me Test"><con:settings/><con:config><script>log.info("Should be run");</script></con:config></con:testStep><con:properties><con:property><con:name>version</con:name><con:value>1.0</con:value></con:property></con:properties></con:testCase><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase2" searchProperties="true" id="4094053c-5344-4557-96e4-56a4a164d0c2"><con:settings/><con:testStep type="groovy" name="Groovy Script"><con:settings/><con:config><script>log.info(testRunner.testCase.getPropertyValue("version"));
+
+if(Float.parseFloat(testRunner.testCase.getPropertyValue("version")) != 1.0){
+	testRunner.testCase.testSteps.each{k,v -> 
+	   log.info("Cancelling step: " + k);
+        testRunner.cancel(k);
+	}
+}
+</script></con:config></con:testStep><con:testStep type="groovy" name="Fake Test"><con:settings/><con:config><script>log.info("Should not be run");</script></con:config></con:testStep><con:properties><con:property><con:name>version</con:name><con:value>1.1</con:value></con:property></con:properties></con:testCase><con:properties/></con:testSuite><con:testSuite name="Version_1_1"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:properties/></con:testSuite><con:requirements/><con:properties/><con:wssContainer/><con:databaseConnectionContainer/><con:oAuth2ProfileContainer/><con:reporting><con:xmlTemplates/><con:parameters/></con:reporting></con:soapui-project>
